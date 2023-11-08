@@ -9,7 +9,7 @@
 
 </script>
 <template>
-  <div>
+  <div class="bg-colorTheme1">
     <!-- https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=4690-1607&mode=design&t=im9XqrRGXThI9u1r-0  -->
     <header class="sticky top-0 sm:px-6 sm:py-3" style="z-index: 1000">
       <div
@@ -47,10 +47,12 @@
     </header>
 
     <!-- banner -->
-    <section class="container mx-auto relative pt-24">
-      <h2 class="sm:flex text-center mb-4">
+    <section class="bg-white">
+      <div class="container mx-auto relative pt-24 ">
+
+      <h2 class="sm:flex text-center mb-4 Mantou">
         <span
-          class="text-gradientTheme text-5xl xl:text-8xl font-black inline-block mx-auto"
+          class="text-gradientTheme text-5xl xl:text-8xl inline-block mx-auto"
           >台灣的明天 <br class="block md:hidden" />喵先鋪路</span
         >
       </h2>
@@ -78,23 +80,24 @@
         <a href="#">IG</a>
         <a href="#">Youtube</a>
       </div>
+
+    </div>
+
     </section>
 
     <!-- marquee -->
-    <section
-      class="overflow-hidden bg-primaryTheme text-white text-6xl p-2 z-70"
-    >
-      <div class="marquee">
-        <span class="text-transparent whitespace-nowrap"
-          >為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望</span
-        >
-        <div class="marquee-text">
-          <span
-            >為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望</span
-          >
-          <span
-            >為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望</span
-          >
+    <section class="overflow-hidden bg-primaryTheme text-white text-[40px] xl:text-[60px] py-2 z-70">
+      <div class="marquee relative mx-auto overflow-hidden w-[1400px] xl:w-[2000px] Mantou leading-none">
+        <span class="text-transparent whitespace-nowrap ">
+          為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望
+        </span>
+        <div class="marquee-text  w-[2800px] xl:w-[4000px]">
+          <span>
+            為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望
+          </span>
+          <span>
+            為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望
+          </span>
         </div>
       </div>
     </section>
@@ -111,7 +114,7 @@
           </h3>
           <h2 class="text-center">
             <span
-              class="text-gradientTheme text-[52px] xl:text-[64px] font-black inline-block"
+              class="text-gradientTheme text-[52px] xl:text-[64px] inline-block Mantou"
               >候選人主張</span
             >
           </h2>
@@ -135,7 +138,7 @@
 
     <!-- Latest Events -->
 
-    <section class="px-4 py-16">
+    <section class="px-4 py-16 rounded-tr-[32px] rounded-bl-[32px] xl:rounded-tr-[96px] xl:rounded-bl-[96px] bg-white">
       <div class="container mx-auto">
         <h3 class="text-center">
           <span
@@ -145,7 +148,7 @@
         </h3>
         <h2 class="text-center">
           <span
-            class="text-gradientTheme text-[52px] xl:text-[64px] font-black inline-block"
+            class="text-gradientTheme text-[52px] xl:text-[64px] inline-block Mantou"
             >最新活動</span
           >
         </h2>
@@ -230,7 +233,7 @@
     </section>
 
     <!-- Policy Issues -->
-    <section class="px-4 py-16 bg-color-theme-1">
+    <section class="px-4 py-16 bg-colorTheme1">
       <div class="container mx-auto">
         <h3 class="text-center">
           <span
@@ -240,7 +243,7 @@
         </h3>
         <h2 class="text-center mb-10">
           <span
-            class="text-gradientTheme text-[52px] xl:text-[64px] font-black inline-block"
+            class="text-gradientTheme text-[52px] xl:text-[64px] inline-block Mantou"
             >政策議題</span
           >
         </h2>
@@ -280,7 +283,7 @@
     <section class="px-4 py-16">
       <div class="grid md:grid-cols-2 gap-6 container mx-auto text-white">
         <div class="bg-primaryTheme rounded-3xl px-6 py-10">
-          <h3 class="text-4xl mb-4">小額支持喵喵</h3>
+          <h3 class="text-4xl mb-4 Mantou">小額支持喵喵</h3>
           <p class="text-xl font-semibold">
             您的小筆捐款，是每隻毛孩未來的大大動力！
           </p>
@@ -292,7 +295,7 @@
           </button>
         </div>
         <div class="bg-primary rounded-3xl px-6 py-10">
-          <h3 class="text-4xl mb-4">民眾服務信箱</h3>
+          <h3 class="text-4xl mb-4 Mantou">民眾服務信箱</h3>
           <p class="text-xl font-semibold">
             親愛的鄉親，每一位市民的意見都是我們社區前進的原動力
           </p>
@@ -309,7 +312,7 @@
     <!-- end banner -->
     <section class="">
       <h2 class="sm:flex text-center mb-4">
-        <span class="text-gradientTheme text-5xl font-black inline-block mx-auto"
+        <span class="text-gradientTheme text-5xl inline-block mx-auto Mantou"
           >台灣的明天 <br class="block sm:hidden" />喵先鋪路</span
         >
       </h2>
@@ -389,125 +392,8 @@
     </section>
 
     <!-- modal -->
-
-    <div
-      id="modal"
-      class="hidden fixed duration-300 h-[100vh] inset-0 sm:py-6 bg-[#000C] sm:px-4"
-      style="z-index: 2000"
-    >
-      <div
-        class="container mx-auto h-full bg-white sm:rounded-3xl flex flex-col"
-      >
-        <div
-          class="sticky top-0 flex justify-between pt-4 pb-2 xl:py-12 px-4 xl:px-12"
-        >
-          <h2 class="font-bold text-2xl xl:text-[32px]">最新活動</h2>
-          <a href="#" class="block w-6 h-6 xl:w-">Ｘ</a>
-        </div>
-        <div class="p-4 pt-2 xl:p-12 xl:pt-2 overflow-auto grow">
-          <div>001</div>
-          <div>002</div>
-          <div>003</div>
-          <div>004</div>
-          <div>005</div>
-          <div>006</div>
-          <div>007</div>
-          <div>008</div>
-          <div>009</div>
-          <div>010</div>
-          <div>011</div>
-          <div>012</div>
-          <div>013</div>
-          <div>014</div>
-          <div>015</div>
-          <div>016</div>
-          <div>017</div>
-          <div>018</div>
-          <div>019</div>
-          <div>020</div>
-          <div>021</div>
-          <div>022</div>
-          <div>023</div>
-          <div>024</div>
-          <div>025</div>
-          <div>026</div>
-          <div>027</div>
-          <div>028</div>
-          <div>029</div>
-          <div>030</div>
-          <div>031</div>
-          <div>032</div>
-          <div>033</div>
-          <div>034</div>
-          <div>035</div>
-          <div>036</div>
-          <div>037</div>
-          <div>038</div>
-          <div>039</div>
-          <div>040</div>
-          <div>041</div>
-          <div>042</div>
-          <div>043</div>
-          <div>044</div>
-          <div>045</div>
-          <div>046</div>
-          <div>047</div>
-          <div>048</div>
-          <div>049</div>
-          <div>050</div>
-          <div>051</div>
-          <div>052</div>
-          <div>053</div>
-          <div>054</div>
-          <div>055</div>
-          <div>056</div>
-          <div>057</div>
-          <div>058</div>
-          <div>059</div>
-          <div>060</div>
-          <div>061</div>
-          <div>062</div>
-          <div>063</div>
-          <div>064</div>
-          <div>065</div>
-          <div>066</div>
-          <div>067</div>
-          <div>068</div>
-          <div>069</div>
-          <div>070</div>
-          <div>071</div>
-          <div>072</div>
-          <div>073</div>
-          <div>074</div>
-          <div>075</div>
-          <div>076</div>
-          <div>077</div>
-          <div>078</div>
-          <div>079</div>
-          <div>080</div>
-          <div>081</div>
-          <div>082</div>
-          <div>083</div>
-          <div>084</div>
-          <div>085</div>
-          <div>086</div>
-          <div>087</div>
-          <div>088</div>
-          <div>089</div>
-          <div>090</div>
-          <div>091</div>
-          <div>092</div>
-          <div>093</div>
-          <div>094</div>
-          <div>095</div>
-          <div>096</div>
-          <div>097</div>
-          <div>098</div>
-          <div>099</div>
-          <div>100</div>
-        </div>
-      </div>
-    </div>
+    <Modal />
+    
   </div>
 </template>
 
@@ -543,13 +429,10 @@ background-clip: text;
 
 
 /* marquee */
-.marquee {
-  overflow: hidden;
-  position: relative;
-}
+
 .marquee-text {
   display: block;
-  width: 200%;
+
   position: absolute;
   overflow: hidden;
 
@@ -565,15 +448,7 @@ background-clip: text;
   100% { left: -100%; }
 }
 
-/* scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  background-color: #94A3B8; /* or add it to the track */
-}
-::-webkit-scrollbar-thumb {
-  background: #334155;
-}
+
 
 
 .ellipsis-2 {
