@@ -36,7 +36,7 @@ const closeModal = () => {
           </div>
           <ul class="hidden xl:flex text-primary">
             <li class="mr-4">
-              <a href="#" class="block p-2 hover:text-primaryTheme">候選人主張</a>
+              <a href="#section-advocate" class="block p-2 hover:text-primaryTheme">候選人主張</a>
             </li>
             <li class="mr-4">
               <a href="#section-LatestEvents" class="block p-2 hover:text-primaryTheme">最新活動</a>
@@ -306,14 +306,20 @@ const closeModal = () => {
       <div class="container mx-auto">
         <div class="grid lg:grid-cols-2">
           <div>
-            <div>
-              <span>3</span>
-              <span>喵立翰 Miao Li-Han</span>
+            <div class="flex items-center">
+              <span class="w-8 h-8 rounded-full text-xl text-white bg-gradientTheme font-bold flex justify-center items-center mr-2">3</span>
+              <span class="text-primaryTheme text-[28px] font-bold">喵立翰 Miao Li-Han</span>
             </div>
-            <ul class="flex">
-              <li><a href="#">F</a></li>
-              <li><a href="#">I</a></li>
-              <li><a href="#">Y</a></li>
+            <ul class="flex my-4">
+              <li><a href="#" class="block p-2 rounded-full bg-white mr-2">
+                <img src="~/assets/images/icon_fb.png" alt="" >
+              </a></li>
+              <li><a href="#" class="block p-2 rounded-full bg-white mr-2">
+                <img src="~/assets/images/icon_ig.png" alt="">
+              </a></li>
+              <li><a href="#" class="block p-2 rounded-full bg-white mr-2">
+                <img src="~/assets/images/icon_youtube.png" alt="">
+              </a></li>
             </ul>
             <p class="text-sm">© 2023 喵立翰 Miao Li-Han 版權所有</p>
           </div>
@@ -328,34 +334,34 @@ const closeModal = () => {
         </div>
       </div>
     </footer>
-    <section class="xl:hidden fixed bottom-0 w-full text-center bg-[#FFFD] backdrop-blur-md backdrop-opacity-90 text-[10px]">
+    <section class="xl:hidden sticky bottom-0 w-full text-center bg-[#FFFD] backdrop-blur-md backdrop-opacity-90 text-[10px]">
       <ul class="grid grid-cols-5">
         <li>
-          <a href="#" class="block pt-3 pb-4 hover:text-primaryTheme">
+          <a href="#section-advocate" class="block pt-3 pb-4 hover:text-primaryTheme">
             <img src="~/assets/images/menu_advocate.png" alt="候選人主張" height="24" width="24" class="mx-auto mb-1" />
             <span>候選人主張</span>
           </a>
         </li>
         <li>
-          <a href="#" class="block pt-3 pb-4 hover:text-primaryTheme">
+          <a href="#section-LatestEvents" class="block pt-3 pb-4 hover:text-primaryTheme">
             <img src="~/assets/images/menu_events.png" alt="最新活動" height="24" width="24" class="mx-auto mb-1" />
             <span>最新活動</span>
           </a>
         </li>
         <li>
-          <a href="#" class="block pt-3 pb-4 hover:text-primaryTheme">
+          <a href="#section-PolicyIssues" class="block pt-3 pb-4 hover:text-primaryTheme">
             <img src="~/assets/images/menu_issues.png" alt="政策議題" height="24" width="24" class="mx-auto mb-1" />
             <span>政策議題</span>
           </a>
         </li>
         <li>
-          <a href="#" class="block pt-3 pb-4 hover:text-primaryTheme">
-            <img src="~/assets/images/menu_donation.png" alt="小額捐款" height="24" width="24" class="mx-auto mb-1" />
+          <a href="#section-donation" class="block pt-3 pb-4 hover:text-primaryTheme">
+            <img src="~/assets/images/menu_donate.png" alt="小額捐款" height="24" width="24" class="mx-auto mb-1" />
             <span>小額捐款</span>
           </a>
         </li>
         <li>
-          <a href="#" class="block pt-3 pb-4 hover:text-primaryTheme">
+          <a href="#section-mail" class="block pt-3 pb-4 hover:text-primaryTheme">
             <img src="~/assets/images/menu_mail.png" alt="民眾服務信箱" height="24" width="24" class="mx-auto mb-1" />
             民眾服務信箱</a
           >
