@@ -90,10 +90,16 @@ const closeModal = () => {
           <img src="~/assets/images/banner.png" alt="" />
         </div>
 
-        <div class="absolte bottom-3 flex">
-          <a href="#">facebook</a>
-          <a href="#">IG</a>
-          <a href="#">Youtube</a>
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-6 sm:hidden py-2 px-10 rounded-xl bg-white shadow ">
+          <a href="#">
+            <img src="~/assets/images/icon_fb.png" alt="" >
+          </a>
+          <a href="#">
+            <img src="~/assets/images/icon_ig.png" alt="" >
+          </a>
+          <a href="#">
+            <img src="~/assets/images/icon_youtube.png" alt="" >
+          </a>
         </div>
 
       </div>
