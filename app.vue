@@ -7,6 +7,14 @@ const openLatestEventsModal = (n) => {
   modalContent.value = 'LatestEvents'
   // console.log(modalOpen.value, modalContent.value)
 }
+const openPolicyIssuesModal = (n) => {
+  modalOpen.value = true
+  modalContent.value = 'PolicyIssues'
+  // console.log(modalOpen.value, modalContent.value)
+}
+
+
+
 const closeModal = () => {
     modalOpen.value = false
   }
@@ -220,7 +228,7 @@ const closeModal = () => {
 
         <ul class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-y-16 xl:gap-16 items-stretch text-primary text-2xl font-bold">
           <li>
-            <a href="#" class="flex flex-col justify-between h-full">
+            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(1)">
               <h4 class="p-4 pt-0">
                 為毛孩子謀福利！<br />
                 推動寵物醫療保障方案
@@ -229,7 +237,7 @@ const closeModal = () => {
             </a>
           </li>
           <li>
-            <a href="#" class="flex flex-col justify-between h-full">
+            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(2)">
               <h4 class="p-4 pt-0">
                 打造休閒天堂！<br />
                 推廣寵物休閒與娛樂場所
@@ -238,7 +246,7 @@ const closeModal = () => {
             </a>
           </li>
           <li class="">
-            <a href="#" class="flex flex-col justify-between h-full">
+            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(3)">
               <h4 class="p-4 pt-0">推廣寵物飼養教育，讓愛更加專業</h4>
               <img src="~/assets/images/issues_3.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>

@@ -23,7 +23,8 @@ const { modalOpen } = toRefs(props);
           </a>
         </div>
 
-        <LatestEvent ref="latestEvent" />
+        <!-- <LatestEvent ref="latestEvent" class="" /> -->
+        <PolicyIssues />
 
       </div>
     </div>
