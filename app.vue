@@ -304,8 +304,8 @@ const closeModal = () => {
     <!-- footer -->
     <footer class="px-4 py-16 bg-colorTheme2 text-primary">
       <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2">
-          <div>
+        <div class="grid lg:grid-cols-2 gap-4">
+          <div class="mb-6 lg:mb-0">
             <div class="flex items-center">
               <span class="w-8 h-8 rounded-full text-xl text-white bg-gradientTheme font-bold flex justify-center items-center mr-2">3</span>
               <span class="text-primaryTheme text-[28px] font-bold">喵立翰 Miao Li-Han</span>
