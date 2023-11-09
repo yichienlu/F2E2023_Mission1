@@ -30,10 +30,10 @@ const closeModal = () => {
     <header class="sticky top-0 sm:px-6 sm:py-3" style="z-index: 1000">
       <div  class="px-6 py-3 bg-[#FFFD] sm:rounded-2xl backdrop-blur-md">
         <div class="flex justify-between items-center">
-          <div>
-            <img src="" alt="" />
+          <a href="#" class="flex items-center">
+            <img src="~/assets/images/logo.png" alt="" class="mr-2" />
             <span class="text-2xl font-bold text-primaryTheme">喵立翰 Miao Li-Han</span>
-          </div>
+          </a>
           <ul class="hidden xl:flex text-primary">
             <li class="mr-4">
               <a href="#section-advocate" class="block p-2 hover:text-primaryTheme">候選人主張</a>
@@ -49,10 +49,16 @@ const closeModal = () => {
             </li>
             <li><a href="#section-mail" class="block p-2 hover:text-primaryTheme">民眾服務信箱</a></li>
           </ul>
-          <div class="hidden sm:flex">
-            <a href="#">facebook</a>
-            <a href="#">IG</a>
-            <a href="#">Youtube</a>
+          <div class="hidden sm:flex gap-4">
+            <a href="#">
+              <img src="~/assets/images/icon_fb.png" alt="" >
+            </a>
+            <a href="#">
+              <img src="~/assets/images/icon_ig.png" alt="" >
+            </a>
+            <a href="#">
+              <img src="~/assets/images/icon_youtube.png" alt="" >
+            </a>
           </div>
         </div>
       </div>
