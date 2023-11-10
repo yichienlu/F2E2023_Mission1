@@ -1,4 +1,6 @@
 <script setup>
+import data from '~/db.json'
+
   import { useModalStore } from '@/stores/modal'
   const modalStore = useModalStore()
 

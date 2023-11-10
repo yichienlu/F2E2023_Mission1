@@ -1,12 +1,17 @@
 <script setup>
+  import { useModalStore } from '@/stores/modal'
+  const modalStore = useModalStore()
+  // const num = modalStore.modalContentNumber
+
+  import data from '~/db.json'
+  const policy = data.policyIssues
 
 </script>
 <template>
         <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
-
           <div class="basis-5/12 ">
-            <img class="w-full h-[256px] object-cover" src="~/assets/images/issues_1.png" alt="">
-            <p class="text-sm mt-4 mb-2">為毛孩子謀福利！推動寵物醫療保障方案</p>
+            <img class="w-full h-[256px] object-cover" :src="`~/assets/images/issues_${modalStore.modalContentNumber + 1}.png`" alt="">
+            <p class="text-sm mt-4 mb-2">{{ policy[modalStore.modalContentNumber].title }}</p>
             <div class="flex items-center mb-8">
               <div class="mr-4">分享</div>
               <div class="flex gap-4">
@@ -28,21 +33,21 @@
           
 
           <div class="basis-7/12 overflow-auto">
-            <h3 class="text-2xl xl:text-[32px] font-bold text-primaryTheme mb-[42px]">為毛孩子謀福利！推動寵物醫療保障方案</h3>
+            <h3 class="text-2xl xl:text-[32px] font-bold text-primaryTheme mb-[42px]">{{ policy[modalStore.modalContentNumber].title }}</h3>
             
             <ul>
-              <li>
-                <h4 class="text-xl font-bold mb-2">設立寵物醫療基金</h4>
-                <p class="text-lg mb-6">每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用</p>
+              <li v-for="item in policy[modalStore.modalContentNumber].policyIssues" :key="item.id">
+                <h4 class="text-xl font-bold mb-2">{{item.policy}}</h4>
+                <p class="text-lg mb-6">{{ item.description }}</p>
               </li>
-              <li>
+              <!-- <li>
                 <h4 class="text-xl font-bold mb-2">提供醫療補助</h4>
                 <p class="text-lg mb-6">每隻寵物每年可獲得高達新台幣 20,000 元的醫療補助，減輕飼主的經濟壓力</p>
               </li>
               <li>
                 <h4 class="text-xl font-bold mb-2">合作動物醫院</h4>
                 <p class="text-lg mb-6">目前已有和超過 200 家動物醫院進行初步的合作討論</p>
-              </li>
+              </li> -->
             </ul>
             
             <!-- 更多活動 -->

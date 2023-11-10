@@ -1,4 +1,8 @@
 <script setup>
+import data from '~/db.json'
+const {donation} = data
+
+console.log(donation)
 
   let donated = ref(false)
 
@@ -26,7 +30,7 @@
             <div v-if="!donated">
             <h3 class="text-xl font-bold mb-4">捐款方案</h3>
             <ul  class="mb-4">
-              <li class="mb-4">
+              <li class="mb-4" >
                 <input type="radio" name="donate" id="donate-1" class="hidden checked:border-primaryTheme">
                 <label for="donate-1" class="block 2xl:flex justify-between rounded-2xl border-2 border-gray-200 hover:bg-colorTheme2 px-4 py-6">
                   <h4 class="text-xl mb-2 text-primaryTheme font-bold">喵星人之友</h4>
@@ -35,7 +39,7 @@
                       <div>NT$</div>
                       <div class="text-2xl font-bold">600</div>
                     </div>
-                    <div class="text-sm text-gray-500 ml-6">已有<span>9957</span>人贊助</div>
+                    <div class="text-sm text-gray-500 ml-6">已有 <span>{{donation.regular[0].num}}</span> 人贊助</div>
                   </div>
                 </label>
               </li>
@@ -48,7 +52,7 @@
                       <div>NT$</div>
                       <div class="text-2xl font-bold">6000</div>
                     </div>
-                    <div class="text-sm text-gray-500 ml-6">已有<span>2000</span>人贊助</div>
+                    <div class="text-sm text-gray-500 ml-6">已有 <span>{{donation.regular[1].num}}</span> 人贊助</div>
                   </div>
                 </label>
               </li>
@@ -61,7 +65,7 @@
                       <div>NT$</div>
                       <div class="text-2xl font-bold">60000</div>
                     </div>
-                    <div class="text-sm text-gray-500 ml-6">已有<span>999</span>人贊助</div>
+                    <div class="text-sm text-gray-500 ml-6">已有 <span>{{donation.regular[2].num}}</span> 人贊助</div>
                   </div>
                 </label>
               </li>
