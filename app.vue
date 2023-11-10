@@ -1,11 +1,24 @@
 <script setup>
-
+  import { useModalStore } from '@/stores/modal'
+  const modalStore = useModalStore()
 
 const openLatestEventsModal = (n) => {
-
+  modalStore.modalContent = 'latestEvents'
+  modalStore.toggleModal()
+  modalStore.modalContentNumber = n
 }
 const openPolicyIssuesModal = (n) => {
-
+  modalStore.modalContent = 'policyIssues'
+  modalStore.toggleModal()
+  modalStore.modalContentNumber = n
+}
+const openDonationModal = () => {
+  modalStore.modalContent = 'donation'
+  modalStore.toggleModal()
+}
+const openMailModal = () => {
+  modalStore.modalContent = 'mail'
+  modalStore.toggleModal()
 }
 
 
@@ -152,7 +165,7 @@ const openPolicyIssuesModal = (n) => {
           <span class="text-gradientTheme text-[52px] xl:text-[64px] inline-block Mantou">最新活動</span>
         </h2>
         <div class="grid lg:grid-cols-2 gap-6">
-          <a href="#" class="mb-6" @click.prevent="openLatestEventsModal(1)">
+          <a href="#" class="mb-6" @click.prevent="openLatestEventsModal(0)">
             <div
               class="h-[240px] bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fcf82d7cb-b899-4adf-a901-1ad7ce1dff8f%2FOIG_(2).jpeg?table=block&id=759faa20-87e9-4377-ae39-56cc5e1cbdd2&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
             <div class="text-sm text-secondary">2023/12/26</div>
@@ -167,7 +180,7 @@ const openPolicyIssuesModal = (n) => {
           <div>
             <ul>
               <li class="mb-6">
-                <a href="#" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(2)">
+                <a href="#" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(1)">
                   <div class="basis-1/4 rounded-lg bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fe32175f1-73cf-45f7-89ac-9a91da0fd3e4%2FOIG_(1).jpeg?table=block&id=304c874e-e2e0-40ac-9618-62f18b91146b&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
                   <div class="basis-3/4">
                     <div class="text-sm text-secondary">2023/12/24</div>
@@ -181,7 +194,7 @@ const openPolicyIssuesModal = (n) => {
                 </a>
               </li>
               <li class="mb-6">
-                <a href="" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(3)">
+                <a href="" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(2)">
                   <div class="basis-1/4 rounded-lg bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2F3221d1b9-47c2-404f-b583-92531980d6b5%2FOIG_(3).jpeg?table=block&id=58bdb676-6d70-4c1a-8b44-6483ee00d7ae&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
                   <div class="basis-3/4">
                     <div class="text-sm text-secondary">2023/12/20</div>
@@ -193,7 +206,7 @@ const openPolicyIssuesModal = (n) => {
                 </a>
               </li>
               <li class="mb-6">
-                <a href="#" class="flex flex-row gap-4 xl:h-[134px]" @click.prevent="openLatestEventsModal(4)">
+                <a href="#" class="flex flex-row gap-4 xl:h-[134px]" @click.prevent="openLatestEventsModal(3)">
                   <div
                     class="basis-1/4 rounded-lg bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fcf82d7cb-b899-4adf-a901-1ad7ce1dff8f%2FOIG_(2).jpeg?table=block&id=759faa20-87e9-4377-ae39-56cc5e1cbdd2&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
                   <div class="basis-3/4">
@@ -231,7 +244,7 @@ const openPolicyIssuesModal = (n) => {
 
         <ul class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-y-16 xl:gap-16 items-stretch text-primary text-2xl font-bold">
           <li>
-            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(1)">
+            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(0)">
               <h4 class="p-4 pt-0">
                 為毛孩子謀福利！<br />
                 推動寵物醫療保障方案
@@ -240,7 +253,7 @@ const openPolicyIssuesModal = (n) => {
             </a>
           </li>
           <li>
-            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(2)">
+            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(1)">
               <h4 class="p-4 pt-0">
                 打造休閒天堂！<br />
                 推廣寵物休閒與娛樂場所
@@ -249,7 +262,7 @@ const openPolicyIssuesModal = (n) => {
             </a>
           </li>
           <li class="">
-            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(3)">
+            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(2)">
               <h4 class="p-4 pt-0">推廣寵物飼養教育，讓愛更加專業</h4>
               <img src="~/assets/images/issues_3.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
@@ -267,7 +280,7 @@ const openPolicyIssuesModal = (n) => {
             您的小筆捐款，是每隻毛孩未來的大大動力！
           </p>
           <div class="flex items-center justify-between">
-            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold">
+            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold" @click.prevent="openDonationModal">
               <span>小額捐款</span>
               <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button>
@@ -281,7 +294,7 @@ const openPolicyIssuesModal = (n) => {
             親愛的鄉親，每一位市民的意見都是我們社區前進的原動力
           </p>
           <div class="flex items-center justify-between">
-            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold">
+            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold" @click.prevent="openMailModal">
               <span>填寫表單</span>
               <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button> 
@@ -373,7 +386,7 @@ const openPolicyIssuesModal = (n) => {
     </section>
 
     <!-- modal -->
-    <Modal />
+    <Modal v-show="modalStore.modalOpen"/>
     
   </div>
 </template>

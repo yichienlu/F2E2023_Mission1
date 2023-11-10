@@ -1,9 +1,11 @@
 <script setup>
+  import { useModalStore } from '@/stores/modal'
+  const modalStore = useModalStore()
 
-
-
-
-
+  
+  const closeModal = () => {
+    modalStore.toggleModal()
+  }
 
 </script>
 <template>
@@ -11,14 +13,21 @@
       style="z-index: 2000">
       <div class="container mx-auto h-full bg-white sm:rounded-3xl flex flex-col duration-300"  >
         <div class="sticky top-0 flex justify-between pt-4 pb-2 xl:py-12 px-4 xl:px-12">
-          <h2 class="font-bold text-2xl xl:text-[32px]">最新活動</h2>
-          <a href="#" class="hover:text-primaryT" @click.prevent="">
+          <h2 class="font-bold text-2xl xl:text-[32px]">
+            <span v-if="modalStore.modalContent == 'latestEvents'">最新活動</span>
+            <span v-else-if="modalStore.modalContent == 'policyIssues'">政策議題</span>
+            <span v-else-if="modalStore.modalContent == 'donation'">小額捐款</span>
+            <span v-else>民眾服務信箱</span>
+          </h2>
+          <a href="#" class="hover:text-primaryTheme" @click.prevent="closeModal">
             <Icon name="material-symbols:cancel" class="w-6 h-6 xl:w-8 xl:h-8 " />
           </a>
         </div>
 
-        <LatestEvents />
-        <!-- <PolicyIssues /> -->
+        <LatestEvents v-if="modalStore.modalContent == 'latestEvents'" />
+        <PolicyIssues v-else-if="modalStore.modalContent == 'policyIssues'" />
+        <Donation v-else-if="modalStore.modalContent == 'donation'" />
+        <Mail v-else />
 
       </div>
     </div>
