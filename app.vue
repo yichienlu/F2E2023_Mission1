@@ -1,24 +1,15 @@
 <script setup>
-  let modalOpen = ref(false)
-  let modalContent = ref('')
+
 
 const openLatestEventsModal = (n) => {
-  modalOpen.value = true
-  modalContent.value = 'LatestEvents'
-  // console.log(modalOpen.value, modalContent.value)
+
 }
 const openPolicyIssuesModal = (n) => {
-  modalOpen.value = true
-  modalContent.value = 'PolicyIssues'
-  // console.log(modalOpen.value, modalContent.value)
+
 }
 
 
 
-const closeModal = () => {
-    modalOpen.value = false
-  }
-  
 
 
 // https://fonts.google.com/specimen/Inter
@@ -382,7 +373,7 @@ const closeModal = () => {
     </section>
 
     <!-- modal -->
-    <Modal  :modal-open="modalOpen" @close-modal="closeModal" />
+    <Modal />
     
   </div>
 </template>

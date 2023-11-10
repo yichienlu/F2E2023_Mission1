@@ -1,30 +1,24 @@
 <script setup>
-const props = defineProps(['modalOpen']);
-const { modalOpen } = toRefs(props);
 
 
 
-  const modal = ref(null)
-  const latestEvent = ref(null)
 
 
-  const emit = defineEmits(['close-modal'])
-  
 
 </script>
 <template>
-    <div ref="modal" id="modal" class="fixed duration-300 h-[100vh] inset-0 sm:py-6  sm:px-4 bg-[#000C] text-primary" :class="{'hidden':!modalOpen}" 
+    <div ref="modal" id="modal" class="fixed duration-300 h-[100vh] inset-0 sm:py-6  sm:px-4 bg-[#000C] text-primary"  
       style="z-index: 2000">
-      <div class="container mx-auto h-full bg-white sm:rounded-3xl flex flex-col duration-300"  :class="{'translate-y-[120%]':!modalOpen}">
+      <div class="container mx-auto h-full bg-white sm:rounded-3xl flex flex-col duration-300"  >
         <div class="sticky top-0 flex justify-between pt-4 pb-2 xl:py-12 px-4 xl:px-12">
           <h2 class="font-bold text-2xl xl:text-[32px]">最新活動</h2>
-          <a href="#" class="hover:text-primaryT" @click.prevent="emit('close-modal')">
+          <a href="#" class="hover:text-primaryT" @click.prevent="">
             <Icon name="material-symbols:cancel" class="w-6 h-6 xl:w-8 xl:h-8 " />
           </a>
         </div>
 
-        <!-- <LatestEvent ref="latestEvent" class="" /> -->
-        <PolicyIssues />
+        <LatestEvents />
+        <!-- <PolicyIssues /> -->
 
       </div>
     </div>
