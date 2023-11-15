@@ -1,5 +1,29 @@
 <script setup>
+  import data from '~/db.json'
+  import { useModalStore } from '@/stores/modal'
+  const modalStore = useModalStore()
+  import {useLatestEventsStore} from '@/stores/latestEvents'
+  const events = useLatestEventsStore()
 
+  console.log(events.number)
+
+  const {latestEvents} = data
+
+  // console.log(latestEvents[modalStore.modalContentNumber])
+  // const moreArr = latestEvents.splice
+
+  const switchEvent = (n) => {
+    modalStore.modalContentNumber = n
+    let num = ref(modalStore.modalContentNumber)
+    console.log(num.value)
+  }
+
+  switchEvent(modalStore.modalContentNumber)
+
+  // onMounted(()=>{
+  //   let num = ref(modalStore.modalContentNumber)
+  //   console.log(num.value)
+  // })
 </script>
 <template>
         <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
@@ -53,11 +77,11 @@
             <div class="p-4 bg-slate-50 rounded-xl mt-24">
               <h4 class="mb-4 font-semibold">更多活動</h4>
               <div class="grid gap-4 grid-cols-2  sm:grid-cols-3">
-                <a href="#" class=" hover:text-primaryTheme"> 
+                <a href="#" class=" hover:text-primaryTheme" @click.prevent="switchEvent(1)"> 
                   <img class="rounded-lg mb-3" src="https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fe32175f1-73cf-45f7-89ac-9a91da0fd3e4%2FOIG_(1).jpeg?table=block&id=304c874e-e2e0-40ac-9618-62f18b91146b&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147" alt="">
                   <h5>掃街模式開啟！帶著你的貓耳，來和我一起走！</h5>
                 </a>
-                <a href="#" class=" hover:text-primaryTheme">
+                <a href="#" class=" hover:text-primaryTheme" @click.prevent="switchEvent(2)">
                   <img class="rounded-lg mb-3" src="https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2F3221d1b9-47c2-404f-b583-92531980d6b5%2FOIG_(3).jpeg?table=block&id=58bdb676-6d70-4c1a-8b44-6483ee00d7ae&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147" alt="">
                   <h5>收容所模特兒大比拼！</h5>
                 </a>

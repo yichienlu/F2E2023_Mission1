@@ -251,7 +251,7 @@ const openMailModal = () => {
                 為毛孩子謀福利！<br />
                 推動寵物醫療保障方案
               </h4>
-              <img src="~/assets/images/issues_1.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
+              <img src="~/assets/images/issues_0.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
           </li>
           <li>
@@ -260,13 +260,13 @@ const openMailModal = () => {
                 打造休閒天堂！<br />
                 推廣寵物休閒與娛樂場所
               </h4>
-              <img src="~/assets/images/issues_2.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
+              <img src="~/assets/images/issues_1.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
           </li>
           <li class="">
             <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(2)">
               <h4 class="p-4 pt-0">推廣寵物飼養教育，讓愛更加專業</h4>
-              <img src="~/assets/images/issues_3.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
+              <img src="~/assets/images/issues_2.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
           </li>
         </ul>
@@ -282,11 +282,11 @@ const openMailModal = () => {
             您的小筆捐款，是每隻毛孩未來的大大動力！
           </p>
           <div class="flex items-center justify-between">
-            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold" @click.prevent="openDonationModal">
+            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold grow" @click.prevent="openDonationModal">
               <span>小額捐款</span>
               <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button>
-            <img src="~/assets/images/donate.png" alt="">
+            <img src="~/assets/images/donate.png" alt="" class="object-contain">
           </div>
         </div>
 

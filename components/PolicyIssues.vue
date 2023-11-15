@@ -6,11 +6,13 @@
   import data from '~/db.json'
   const policy = data.policyIssues
 
+console.log(`~/assets/images/issues_${modalStore.modalContentNumber}.png`)
 </script>
 <template>
         <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
           <div class="basis-5/12 ">
-            <img class="w-full h-[256px] object-cover" :src="`~/assets/images/issues_${modalStore.modalContentNumber + 1}.png`" alt="">
+            <img class="w-full h-[256px] object-cover" :src="`~/assets/images/issues_${modalStore.modalContentNumber}.png`" alt="">
+            <!-- dynamic src -->
             <p class="text-sm mt-4 mb-2">{{ policy[modalStore.modalContentNumber].title }}</p>
             <div class="flex items-center mb-8">
               <div class="mr-4">分享</div>
@@ -50,16 +52,16 @@
               </li> -->
             </ul>
             
-            <!-- 更多活動 -->
+            <!-- 更多 -->
             <div class="p-4 bg-slate-50 rounded-xl mt-24">
               <h4 class="mb-4 font-semibold">更多政策議題</h4>
               <div class="grid gap-4 grid-cols-2  sm:grid-cols-3">
-                <a href="#" class=" hover:text-primaryTheme"> 
-                  <img class="rounded-lg mb-3" src="~/assets/images/issues_2.png" alt="">
+                <a href="#" class=" hover:text-primaryTheme" @click.prevent="modalStore.modalContentNumber = 1"> 
+                  <img class="rounded-lg mb-3" src="~/assets/images/issues_1.png" alt="">
                   <h5>打造休閒天堂！推廣寵物休閒與娛樂場所</h5>
                 </a>
-                <a href="#" class=" hover:text-primaryTheme">
-                  <img class="rounded-lg mb-3" src="~/assets/images/issues_3.png" alt="">
+                <a href="#" class=" hover:text-primaryTheme" @click.prevent="modalStore.modalContentNumber = 2">
+                  <img class="rounded-lg mb-3" src="~/assets/images/issues_2.png" alt="">
                   <h5>推廣寵物飼養教育，讓愛更加專業</h5>
                 </a>
               </div>

@@ -71,10 +71,10 @@ console.log(donation)
               </li>
               <li>
                 <input type="radio" name="donate" id="donate-4" class="hidden">
-                <label for="donate-4" class="block rounded-2xl border-2 border-gray-200 hover:bg-colorTheme2 px-4 py-6" :class="{}">
+                <label for="donate-4" class="block rounded-2xl border-2 border-gray-200 hover:bg-colorTheme2 px-4 py-6">
                   <h4 class="text-xl mb-2 text-primaryTheme font-bold">自訂贊助金額</h4>
                   <div class="flex items-center ps-4 rounded-lg bg-gray-100">
-                    <span class="mr-1">NT $</span>
+                    <span class="mr-1 whitespace-nowrap">NT $</span>
                     <input type="number" placeholder="輸入金額" class="block px-4 py-2 bg-transparent grow text-2xl font-bold">
 
                   </div>
