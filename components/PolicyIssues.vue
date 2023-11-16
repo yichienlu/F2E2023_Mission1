@@ -6,12 +6,11 @@
   import data from '~/db.json'
   const policy = data.policyIssues
 
-console.log(`~/assets/images/issues_${modalStore.modalContentNumber}.png`)
 </script>
 <template>
-        <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
-          <div class="basis-5/12 ">
-            <img class="w-full h-[256px] object-cover" :src="policy[modalStore.modalContentNumber].img_url" alt="">
+        <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto sm:flex gap-8">
+          <div class="basis-5/12">
+            <img class="w-full" :src="policy[modalStore.modalContentNumber].img_url" alt="">
             <!-- <img class="w-full h-[256px] object-cover" :src="policy[modalStore.modalContentNumber].img_url" alt=""> -->
             <!-- dynamic src -->
             <p class="text-sm mt-4 mb-2">{{ policy[modalStore.modalContentNumber].title }}</p>

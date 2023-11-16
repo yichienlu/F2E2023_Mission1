@@ -1,5 +1,6 @@
 <script setup>
 import data from '~/db.json'
+console.log(data.latestEvents)
 
   import { useModalStore } from '@/stores/modal'
   const modalStore = useModalStore()
@@ -169,56 +170,51 @@ const openMailModal = () => {
         <div class="grid lg:grid-cols-2 gap-6">
           <a href="#" class="mb-6" @click.prevent="openLatestEventsModal(0)">
             <div
-              class="h-[240px] bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fcf82d7cb-b899-4adf-a901-1ad7ce1dff8f%2FOIG_(2).jpeg?table=block&id=759faa20-87e9-4377-ae39-56cc5e1cbdd2&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
-            <div class="text-sm text-secondary">2023/12/26</div>
+              class="h-[240px] bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[0].image}')`}"></div>
+            <div class="text-sm text-secondary">{{data.latestEvents[0].date}}</div>
             <h4 class="text-xl font-bold">
-              參與台北寵物論壇，爭取貓咪友善環境
+              {{ data.latestEvents[0].title }}
             </h4>
-            <p>
-              炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
-              VIP 休憩空間。
-            </p>
+            <p v-html="data.latestEvents[0].content"></p>
           </a>
           <div>
             <ul>
               <li class="mb-6">
                 <a href="#" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(1)">
-                  <div class="basis-1/4 rounded-lg bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fe32175f1-73cf-45f7-89ac-9a91da0fd3e4%2FOIG_(1).jpeg?table=block&id=304c874e-e2e0-40ac-9618-62f18b91146b&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
+                  <div class="basis-1/4 rounded-lg bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[1].image}')`}"></div>
                   <div class="basis-3/4">
-                    <div class="text-sm text-secondary">2023/12/24</div>
+                    <div class="text-sm text-secondary">{{data.latestEvents[1].date}}</div>
                     <h4 class="font-bold my-2">
-                      掃街模式開啟！帶著你的貓耳，來和我一起走！
+                      {{ data.latestEvents[1].title }}
                     </h4>
-                    <p class="ellipsis-2">
-                      街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！
-                    </p>
+                    <p class="ellipsis-2">{{data.latestEvents[1].content}}</p>
                   </div>
                 </a>
               </li>
               <li class="mb-6">
                 <a href="" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(2)">
-                  <div class="basis-1/4 rounded-lg bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2F3221d1b9-47c2-404f-b583-92531980d6b5%2FOIG_(3).jpeg?table=block&id=58bdb676-6d70-4c1a-8b44-6483ee00d7ae&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
+                  <div class="basis-1/4 rounded-lg bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[2].image}')`}"></div>
                   <div class="basis-3/4">
-                    <div class="text-sm text-secondary">2023/12/20</div>
-                    <h4 class="font-bold my-2">收容所模特兒大比拼！</h4>
-                    <p class="ellipsis-2">
-                      今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！
-                    </p>
+                    <div class="text-sm text-secondary">{{data.latestEvents[2].date}}</div>
+                    <h4 class="font-bold my-2">
+                      {{ data.latestEvents[2].title }}
+                      
+                    </h4>
+                    <p class="ellipsis-2">{{data.latestEvents[2].content}}</p>
                   </div>
                 </a>
               </li>
               <li class="mb-6">
                 <a href="#" class="flex flex-row gap-4 xl:h-[134px]" @click.prevent="openLatestEventsModal(3)">
                   <div
-                    class="basis-1/4 rounded-lg bg-[url('https://chalk-freedom-ec6.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa1da9db4-41fd-4177-a848-eaaf19a89147%2Fcf82d7cb-b899-4adf-a901-1ad7ce1dff8f%2FOIG_(2).jpeg?table=block&id=759faa20-87e9-4377-ae39-56cc5e1cbdd2&spaceId=a1da9db4-41fd-4177-a848-eaaf19a89147')] bg-cover bg-center"></div>
+                    class="basis-1/4 rounded-lg bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[3].image}')`}"></div>
                   <div class="basis-3/4">
-                    <div class="text-sm text-secondary">2023/12/26</div>
+                    <div class="text-sm text-secondary">{{data.latestEvents[3].date}}</div>
                     <h4 class="font-bold my-2">
-                      參與台北寵物論壇，爭取貓咪友善環境
+                      {{ data.latestEvents[3].title }}
+
                     </h4>
-                    <p class="ellipsis-2">
-                      炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！
-                    </p>
+                    <p class="ellipsis-2">{{data.latestEvents[3].content}}</p>
                   </div>
                 </a>
               </li>
