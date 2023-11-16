@@ -175,7 +175,7 @@ const openMailModal = () => {
             <h4 class="text-xl font-bold">
               {{ data.latestEvents[0].title }}
             </h4>
-            <p v-html="data.latestEvents[0].content"></p>
+            <p v-html="data.latestEvents[0].content" class="ellipsis-4"></p>
           </a>
           <div>
             <ul>
@@ -272,31 +272,31 @@ const openMailModal = () => {
     <!-- donation & mail -->
     <section class="px-4 py-16">
       <div class="grid md:grid-cols-2 gap-6 container mx-auto text-white">
-        <div id="section-donation" class="bg-primaryTheme rounded-3xl px-6 py-10 xl:p-24">
+        <div id="section-donation" class="bg-primaryTheme rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between">
           <h3 class="text-4xl mb-4 Mantou">小額支持喵喵</h3>
-          <p class="text-xl font-semibold">
+          <p class="text-xl font-semibold mb-6">
             您的小筆捐款，是每隻毛孩未來的大大動力！
           </p>
           <div class="flex items-center justify-between">
-            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold grow" @click.prevent="openDonationModal">
+            <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold" @click.prevent="openDonationModal">
               <span>小額捐款</span>
               <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button>
-            <img src="~/assets/images/donate.png" alt="" class="object-contain">
+            <img src="~/assets/images/donate.png" alt="" class="object-contain w-32">
           </div>
         </div>
 
-        <div id="section-mail" class="bg-primary rounded-3xl px-6 py-10 xl:p-24">
+        <div id="section-mail" class="bg-primary rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between">
           <h3 class="text-4xl mb-4 Mantou">民眾服務信箱</h3>
-          <p class="text-xl font-semibold">
+          <p class="text-xl font-semibold mb-6">
             親愛的鄉親，每一位市民的意見都是我們社區前進的原動力
           </p>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between h-32">
             <button class="flex items-center px-6 py-4 rounded-full bg-white text-primary font-bold" @click.prevent="openMailModal">
               <span>填寫表單</span>
               <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button> 
-            <img src="~/assets/images/mail.png" alt="">
+            <img src="~/assets/images/mail.png" alt="" class="object-contain w-32">
           </div>
 
         </div>
@@ -438,6 +438,12 @@ const openMailModal = () => {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.ellipsis-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   overflow: hidden;
 }
 
