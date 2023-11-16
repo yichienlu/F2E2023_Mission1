@@ -26,6 +26,7 @@
     {
       "id": 0,
       "title": "為毛孩子謀福利！推動寵物醫療保障方案",
+      "img_url":"_nuxt/assets/images/issues_0.png",
       "policyIssues": [
         {
           "id": 0,
@@ -47,6 +48,7 @@
     {
       "id": 1,
       "title": "打造休閒天堂！推廣寵物休閒與娛樂場所",
+      "img_url":"_nuxt/assets/images/issues_1.png",
       "policyIssues": [
         {
           "id": 0,
@@ -68,6 +70,7 @@
     {
       "id": 2,
       "title": "推廣寵物飼養教育，讓愛更加專業",
+      "img_url":"_nuxt/assets/images/issues_2.png",
       "policyIssues": [
         {
           "id": 0,

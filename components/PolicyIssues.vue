@@ -11,7 +11,8 @@ console.log(`~/assets/images/issues_${modalStore.modalContentNumber}.png`)
 <template>
         <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
           <div class="basis-5/12 ">
-            <img class="w-full h-[256px] object-cover" :src="`~/assets/images/issues_${modalStore.modalContentNumber}.png`" alt="">
+            <img class="w-full h-[256px] object-cover" :src="policy[modalStore.modalContentNumber].img_url" alt="">
+            <!-- <img class="w-full h-[256px] object-cover" :src="policy[modalStore.modalContentNumber].img_url" alt=""> -->
             <!-- dynamic src -->
             <p class="text-sm mt-4 mb-2">{{ policy[modalStore.modalContentNumber].title }}</p>
             <div class="flex items-center mb-8">
@@ -42,27 +43,19 @@ console.log(`~/assets/images/issues_${modalStore.modalContentNumber}.png`)
                 <h4 class="text-xl font-bold mb-2">{{item.policy}}</h4>
                 <p class="text-lg mb-6">{{ item.description }}</p>
               </li>
-              <!-- <li>
-                <h4 class="text-xl font-bold mb-2">提供醫療補助</h4>
-                <p class="text-lg mb-6">每隻寵物每年可獲得高達新台幣 20,000 元的醫療補助，減輕飼主的經濟壓力</p>
-              </li>
-              <li>
-                <h4 class="text-xl font-bold mb-2">合作動物醫院</h4>
-                <p class="text-lg mb-6">目前已有和超過 200 家動物醫院進行初步的合作討論</p>
-              </li> -->
             </ul>
             
             <!-- 更多 -->
             <div class="p-4 bg-slate-50 rounded-xl mt-24">
               <h4 class="mb-4 font-semibold">更多政策議題</h4>
               <div class="grid gap-4 grid-cols-2  sm:grid-cols-3">
-                <a href="#" class=" hover:text-primaryTheme" @click.prevent="modalStore.modalContentNumber = 1"> 
-                  <img class="rounded-lg mb-3" src="~/assets/images/issues_1.png" alt="">
-                  <h5>打造休閒天堂！推廣寵物休閒與娛樂場所</h5>
+                <a href="#" class=" hover:text-primaryTheme" @click.prevent="modalStore.modalContentNumber = modalStore.modalContentNumber == 0 ? 1 : modalStore.modalContentNumber == 1 ? 2 : 0"> 
+                  <img class="rounded-lg mb-3" :src="policy[modalStore.modalContentNumber == 0 ? 1 : modalStore.modalContentNumber == 1 ? 2 : 0].img_url" alt="">
+                  <h5>{{policy[modalStore.modalContentNumber == 0 ? 1 : modalStore.modalContentNumber == 1 ? 2 : 0].title}}</h5>
                 </a>
-                <a href="#" class=" hover:text-primaryTheme" @click.prevent="modalStore.modalContentNumber = 2">
-                  <img class="rounded-lg mb-3" src="~/assets/images/issues_2.png" alt="">
-                  <h5>推廣寵物飼養教育，讓愛更加專業</h5>
+                <a href="#" class=" hover:text-primaryTheme" @click.prevent="modalStore.modalContentNumber = modalStore.modalContentNumber == 0 ? 2 : modalStore.modalContentNumber == 1 ? 0 : 1">
+                  <img class="rounded-lg mb-3" :src="policy[modalStore.modalContentNumber == 0 ? 2 : modalStore.modalContentNumber == 1 ? 0 : 1].img_url" alt="">
+                  <h5>{{policy[modalStore.modalContentNumber == 0 ? 2 : modalStore.modalContentNumber == 1 ? 0 : 1].title}}</h5>
                 </a>
               </div>
             </div>
