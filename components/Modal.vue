@@ -9,9 +9,12 @@
 
 </script>
 <template>
-    <div ref="modal" id="modal" class="fixed duration-300 h-[100vh] inset-0 sm:py-6  sm:px-4 bg-[#000C] text-primary"  
+    <div ref="modal" id="modal" class="fixed duration-300 h-[100vh] inset-0 text-primary"  
       style="z-index: 2000">
-      <div class="container mx-auto h-full bg-white sm:rounded-3xl flex flex-col duration-300"  >
+      <div class="absolute inset-0 bg-[#000C]" @click.prevent="closeModal"></div>
+      <div class="absolute top-0 sm:top-6 bottom-0 sm:bottom-6 left-1/2 -translate-x-1/2 container sm:px-4">
+
+      <div class="mx-auto h-full bg-white sm:rounded-3xl flex flex-col duration-300"  >
         <div class="sticky top-0 flex justify-between pt-4 pb-2 xl:py-12 px-4 xl:px-12">
           <h2 class="font-bold text-2xl xl:text-[32px]">
             <span v-if="modalStore.modalContent == 'latestEvents'">最新活動</span>
@@ -30,6 +33,8 @@
         <Mail v-else />
 
       </div>
+    </div>
+
     </div>
 
 </template>
