@@ -8,8 +8,7 @@
 
 </script>
 <template>
-        <div class="mb-6 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
-
+        <div class="mb-6 lg:mb-0 p-4 pt-2 xl:p-12 xl:pt-2 grow overflow-auto lg:flex gap-8">
           <div class="basis-5/12 ">
             <img class="w-full h-[256px] object-cover" :src="events[modalStore.modalContentNumber].image" alt="">
             <p class="text-sm mt-4 mb-2">{{events[modalStore.modalContentNumber].title}}</p>

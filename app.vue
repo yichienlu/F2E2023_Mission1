@@ -170,9 +170,9 @@ const openMailModal = () => {
         <div class="grid lg:grid-cols-2 gap-6">
           <a href="#" class="mb-6" @click.prevent="openLatestEventsModal(0)">
             <div
-              class="h-[240px] bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[0].image}')`}"></div>
+              class="h-[240px] bg-cover bg-center mb-4" :style="{ backgroundImage: `url('${data.latestEvents[0].image}')`}"></div>
             <div class="text-sm text-secondary">{{data.latestEvents[0].date}}</div>
-            <h4 class="text-xl font-bold">
+            <h4 class="text-xl font-bold my-2">
               {{ data.latestEvents[0].title }}
             </h4>
             <p v-html="data.latestEvents[0].content" class="ellipsis-4"></p>
@@ -221,7 +221,7 @@ const openMailModal = () => {
             </ul>
             <button class="flex items-center px-6 py-4 rounded-full bg-slate-100 text-primary font-semibold">
               <span>查看更多</span>
-              <span class="w-8 h-8">→</span>
+              <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button>
           </div>
         </div>
@@ -324,14 +324,14 @@ const openMailModal = () => {
               <span class="w-8 h-8 rounded-full text-xl text-white bg-gradientTheme font-bold flex justify-center items-center mr-2">3</span>
               <span class="text-primaryTheme text-[28px] font-bold">喵立翰 Miao Li-Han</span>
             </div>
-            <ul class="flex my-4">
-              <li><a href="#" class="block p-2 rounded-full bg-white mr-2">
+            <ul class="flex my-4 gap-2">
+              <li><a href="#" class="block p-2 rounded-full bg-white">
                 <img src="~/assets/images/icon_fb.png" alt="" >
               </a></li>
-              <li><a href="#" class="block p-2 rounded-full bg-white mr-2">
+              <li><a href="#" class="block p-2 rounded-full bg-white">
                 <img src="~/assets/images/icon_ig.png" alt="">
               </a></li>
-              <li><a href="#" class="block p-2 rounded-full bg-white mr-2">
+              <li><a href="#" class="block p-2 rounded-full bg-white">
                 <img src="~/assets/images/icon_youtube.png" alt="">
               </a></li>
             </ul>
