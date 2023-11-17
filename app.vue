@@ -381,6 +381,13 @@ import 'animate.css';
     <!-- modal -->
     <Modal v-show="modalStore.modalOpen"/>
     
+    <!-- loading -->
+    <div class="fixed inset-0 bg-white flex justify-center items-center" style="z-index:2000" 
+    @scroll.prevent
+    @wheel.prevent
+    @touchmove.prevent    >
+      <img src="~/assets/images/loading.gif" alt="">
+    </div>
 
   </div>
 
