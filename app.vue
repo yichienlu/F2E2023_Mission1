@@ -1,9 +1,8 @@
 <script setup>
 import data from '~/db.json'
-console.log(data.latestEvents)
 
-  import { useModalStore } from '@/stores/modal'
-  const modalStore = useModalStore()
+import { useModalStore } from '@/stores/modal'
+const modalStore = useModalStore()
 
 const openLatestEventsModal = (n) => {
   modalStore.modalContent = 'latestEvents'
@@ -24,16 +23,14 @@ const openMailModal = () => {
   modalStore.toggleModal()
 }
 
-
-
-
+// https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=4690-1607&mode=design&t=im9XqrRGXThI9u1r-0 
 
 // https://fonts.google.com/specimen/Inter
+import 'animate.css';
 
 </script>
 <template>
   <div class="bg-colorTheme1">
-    <!-- https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=4690-1607&mode=design&t=im9XqrRGXThI9u1r-0  -->
     <header class="sticky top-0 sm:px-6 sm:py-3" style="z-index: 1000">
       <div  class="px-6 py-3 bg-[#FFFD] sm:rounded-2xl backdrop-blur-md">
         <div class="flex justify-between items-center">
@@ -74,17 +71,15 @@ const openMailModal = () => {
     <!-- banner -->
     <section class="bg-white px-4">
       <div class="container mx-auto relative pt-24 ">
-
         <h2 class="sm:flex text-center mb-4 Mantou">
           <span class="text-gradientTheme text-5xl xl:text-8xl inline-block mx-auto">台灣的明天 <br class="block md:hidden" />喵先鋪路</span>
         </h2>
-        <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-3 mb-4 xl:mb-6">
           <h3 class="px-3 py-2 xl:px-4 xl:py-3 leading-[42px] rounded-2xl text-xl xl:text-[28px] font-bold text-white bg-primary inline-block">
             2024 立委參選人
           </h3>
-          <h3 class="flex items-center px-4 py-3">
-            <div
-              class="w-10 h-10 rounded-full bg-gradientTheme flex justify-center items-center mx-4">
+          <h3 class="flex items-center px-4 py-3 rounded-2xl shadow-lg ">
+            <div class="w-10 h-10 rounded-full bg-gradientTheme flex justify-center items-center mx-4">
               <span class="text-white text-2xl font-bold">3</span>
             </div>
             <span class="text-[28px] sm:text-[40px] text-primaryTheme font-bold">喵立翰 Miao Li-Han</span>
@@ -93,8 +88,8 @@ const openMailModal = () => {
         <div class="w-[320px] sm:w-[360px] xl:hidden mx-auto">
           <img src="~/assets/images/banner.png" alt="" class="block " />
         </div>
-        <div class="hidden xl:block mx-auto">
-          <img src="~/assets/images/banner.png" alt="" />
+        <div class="hidden xl:block mx-auto relative bg-[url('~/assets/images/banner_sky.png')] bg-no-repeat bg-bottom">
+          <img src="~/assets/images/banner_man.png" alt="" class="block mx-auto" />
         </div>
 
         <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-6 sm:hidden py-2 px-10 rounded-xl bg-white shadow ">
@@ -386,7 +381,9 @@ const openMailModal = () => {
     <!-- modal -->
     <Modal v-show="modalStore.modalOpen"/>
     
+
   </div>
+
 </template>
 
 <style lang="scss" scoped>
