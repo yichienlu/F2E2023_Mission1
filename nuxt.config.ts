@@ -9,4 +9,5 @@ export default defineNuxtConfig({
   css: [
     "~/assets/global.css",
   ],
+  plugins: [{ src: "@/plugins/aos.client.js", ssr: false, mode: "client" }],
 })

@@ -35,6 +35,12 @@ const openMailModal = () => {
 
 // https://fonts.google.com/specimen/Inter
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+if(process.client){
+  AOS.init();
+}
 
 </script>
 <template>
@@ -77,7 +83,7 @@ const openMailModal = () => {
     </header>
 
     <!-- banner -->
-    <section class="bg-white px-4">
+    <section class="bg-white px-4"  data-aos="fadeInUp" data-aos-duration="400">
       <div class="container mx-auto relative pt-24 ">
         <h2 class="sm:flex text-center mb-4 Mantou">
           <span class="text-gradientTheme text-5xl xl:text-8xl inline-block mx-auto">台灣的明天 <br class="block md:hidden" />喵先鋪路</span>
@@ -117,7 +123,7 @@ const openMailModal = () => {
     </section>
 
     <!-- marquee -->
-    <section class="overflow-hidden bg-primaryTheme text-white text-[40px] xl:text-[60px] py-2 z-70">
+    <section class="overflow-hidden bg-primaryTheme text-white text-[40px] xl:text-[60px] py-2 z-70" data-aos="fade-up">
       <div class="marquee mx-auto w-[1400px] xl:w-[2000px] Mantou leading-none">
         <span class="text-transparent whitespace-nowrap ">
           為喵星人，護台灣！　　從喵的眼中，看見台灣　　喵的未來，人的希望
@@ -135,7 +141,7 @@ const openMailModal = () => {
 
     <!-- advocate -->
     <section id="section-advocate" class="bg-colorTheme2 py-16 px-4">
-      <div class="container mx-auto rounded-3xl bg-white text-primary grid lg:grid-cols-2">
+      <div class="container mx-auto rounded-3xl bg-white text-primary grid lg:grid-cols-2"  data-aos="fade-up">
         <div class="py-10 px-6">
           <h3 class="text-center">
             <span
@@ -161,7 +167,7 @@ const openMailModal = () => {
 
     <!-- Latest Events -->
 
-    <section id="section-LatestEvents" class="px-4 py-16 rounded-tr-[32px] rounded-bl-[32px] xl:rounded-tr-[96px] xl:rounded-bl-[96px] bg-white">
+    <section id="section-LatestEvents" class="px-4 py-16 rounded-tr-[32px] rounded-bl-[32px] xl:rounded-tr-[96px] xl:rounded-bl-[96px] bg-white" data-aos="fade-up">
       <div class="container mx-auto">
         <h3 class="text-center">
           <span
@@ -275,7 +281,7 @@ const openMailModal = () => {
     <!-- donation & mail -->
     <section class="px-4 py-16">
       <div class="grid md:grid-cols-2 gap-6 container mx-auto text-white">
-        <div id="section-donation" class="bg-primaryTheme rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between">
+        <div id="section-donation" class="bg-primaryTheme rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between" data-aos="fade-right">
           <h3 class="text-4xl mb-4 Mantou">小額支持喵喵</h3>
           <p class="text-xl font-semibold mb-6">
             您的小筆捐款，是每隻毛孩未來的大大動力！
@@ -289,7 +295,7 @@ const openMailModal = () => {
           </div>
         </div>
 
-        <div id="section-mail" class="bg-primary rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between">
+        <div id="section-mail" class="bg-primary rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between" data-aos="fade-left">
           <h3 class="text-4xl mb-4 Mantou">民眾服務信箱</h3>
           <p class="text-xl font-semibold mb-6">
             親愛的鄉親，每一位市民的意見都是我們社區前進的原動力
@@ -307,15 +313,18 @@ const openMailModal = () => {
     </section>
 
     <!-- end banner -->
-    <section class="">
-      <h2 class="sm:flex text-center mb-4">
+    <section class="pb-16 text-center" data-aos="zoom-out-up">
+      <h2 class="sm:flex  mb-4">
         <span class="text-gradientTheme text-[52px] xl:text-[64px] inline-block mx-auto Mantou leading-[105%] xl:leading-normal">
           台灣的明天 <br class="block sm:hidden" />喵先鋪路</span>
       </h2>
-      <h3 class="flex items-center justify-center py-3">
-        <span class="w-12 h-12 rounded-full bg-gradientTheme flex items-center justify-center text-white text-3xl font-bold mr-4">3</span>
-        <span class="text-4xl font-bold text-primaryTheme">喵立翰 Miao Li-Han</span>
+      <h3 class="inline-block">
+        <div class="flex items-center justify-center py-3 px-4 rounded-2xl shadow-lg mb-10">
+          <span class="w-12 h-12 rounded-full bg-gradientTheme flex items-center justify-center text-white text-3xl font-bold mr-4">3</span>
+          <span class="text-4xl font-bold text-primaryTheme">喵立翰 Miao Li-Han</span>
+        </div>
       </h3>
+
     </section>
 
     <!-- footer -->
