@@ -1,4 +1,12 @@
 <script setup>
+  let loading = ref(true)
+
+onMounted(()=>{
+  setTimeout(()=>{
+    loading.value = false
+  }, 1500)
+})
+
 import data from '~/db.json'
 
 import { useModalStore } from '@/stores/modal'
@@ -26,7 +34,7 @@ const openMailModal = () => {
 // https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=4690-1607&mode=design&t=im9XqrRGXThI9u1r-0 
 
 // https://fonts.google.com/specimen/Inter
-import 'animate.css';
+
 
 </script>
 <template>
@@ -379,15 +387,17 @@ import 'animate.css';
     </section>
 
     <!-- modal -->
-    <Modal v-show="modalStore.modalOpen"/>
+    <Modal  />
+    <!-- <Modal v-show="modalStore.modalOpen"/> -->
     
     <!-- loading -->
-    <div class="fixed inset-0 bg-white flex justify-center items-center" style="z-index:2000" 
-    @scroll.prevent
-    @wheel.prevent
-    @touchmove.prevent    >
-      <img src="~/assets/images/loading.gif" alt="">
-    </div>
+    <ClientOnly>
+      <div class="fixed inset-0 bg-white flex justify-center items-center" :class="{'hidden':!loading}" style="z-index:2000" 
+   
+      >
+        <img src="~/assets/images/loading.gif" alt="">
+      </div>
+    </ClientOnly>
 
   </div>
 
