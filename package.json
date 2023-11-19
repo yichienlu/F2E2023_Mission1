@@ -21,6 +21,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "aos": "^2.3.4",
+    "dayjs": "^1.11.10",
     "pinia": "^2.1.7"
   }
 }

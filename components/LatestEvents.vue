@@ -34,7 +34,9 @@
 
     <div class="basis-7/12 overflow-auto">
       <h3 class="text-2xl font-bold text-primaryTheme">{{events[modalStore.modalContentNumber].title}}</h3>
-      <div class="text-sm text-secondary my-2">{{events[modalStore.modalContentNumber].date}}</div>
+      <div class="text-sm text-secondary my-2">
+        <span v-timeformat="events[modalStore.modalContentNumber].date*1000"></span>
+      </div>
       <p v-html="events[modalStore.modalContentNumber].content"></p>
       
       <!-- 更多活動 -->

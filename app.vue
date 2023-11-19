@@ -1,11 +1,4 @@
 <script setup>
-  let loading = ref(true)
-
-onMounted(()=>{
-  setTimeout(()=>{
-    loading.value = false
-  }, 1500)
-})
 
 import data from '~/db.json'
 
@@ -44,7 +37,7 @@ if(process.client){
 
 </script>
 <template>
-  <div class="bg-colorTheme1">
+  <div class="bg-colorTheme1 overflow-hidden">
     <header class="sticky top-0 sm:px-6 sm:py-3" style="z-index: 1000">
       <div  class="px-6 py-3 bg-[#FFFD] sm:rounded-2xl backdrop-blur-md">
         <div class="flex justify-between items-center">
@@ -83,12 +76,12 @@ if(process.client){
     </header>
 
     <!-- banner -->
-    <section class="bg-white px-4"  data-aos="fadeInUp" data-aos-duration="400">
+    <section class="bg-white px-4">
       <div class="container mx-auto relative pt-24 ">
-        <h2 class="sm:flex text-center mb-4 Mantou">
+        <h2 class="sm:flex text-center mb-4 Mantou"  data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="1600">
           <span class="text-gradientTheme text-5xl xl:text-8xl inline-block mx-auto">台灣的明天 <br class="block md:hidden" />喵先鋪路</span>
         </h2>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-3 mb-4 xl:mb-6">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-3 mb-4 xl:mb-6"  data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="1800">
           <h3 class="px-3 py-2 xl:px-4 xl:py-3 leading-[42px] rounded-2xl text-xl xl:text-[28px] font-bold text-white bg-primary inline-block">
             2024 立委參選人
           </h3>
@@ -99,11 +92,11 @@ if(process.client){
             <span class="text-[28px] sm:text-[40px] text-primaryTheme font-bold">喵立翰 Miao Li-Han</span>
           </h3>
         </div>
-        <div class="w-[320px] sm:w-[360px] xl:hidden mx-auto">
+        <div class="w-[320px] sm:w-[360px] xl:hidden mx-auto"  data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="2000">
           <img src="~/assets/images/banner.png" alt="" class="block " />
         </div>
-        <div class="hidden xl:block mx-auto relative bg-[url('~/assets/images/banner_sky.png')] bg-no-repeat bg-bottom">
-          <img src="~/assets/images/banner_man.png" alt="" class="block mx-auto" />
+        <div class="hidden xl:block mx-auto relative bg-[url('~/assets/images/banner_sky.png')] bg-no-repeat bg-bottom"  data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="2000">
+          <img src="~/assets/images/banner_man.png" alt="" class="block mx-auto" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="2200"/>
         </div>
 
         <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-6 sm:hidden py-2 px-10 rounded-xl bg-white shadow ">
@@ -167,21 +160,23 @@ if(process.client){
 
     <!-- Latest Events -->
 
-    <section id="section-LatestEvents" class="px-4 py-16 rounded-tr-[32px] rounded-bl-[32px] xl:rounded-tr-[96px] xl:rounded-bl-[96px] bg-white" data-aos="fade-up">
+    <section id="section-LatestEvents" class="px-4 py-16 rounded-tr-[32px] rounded-bl-[32px] xl:rounded-tr-[96px] xl:rounded-bl-[96px] bg-white text-primary">
       <div class="container mx-auto">
-        <h3 class="text-center">
+        <h3 class="text-center" data-aos="fade-up">
           <span
             class="px-3 py-2 rounded-lg font-bold text-white bg-primary inline-block">LATEST EVENTS</span>
         </h3>
-        <h2 class="text-center">
+        <h2 class="text-center" data-aos="fade-up">
           <span class="text-gradientTheme text-[52px] xl:text-[64px] inline-block Mantou">最新活動</span>
         </h2>
-        <div class="grid lg:grid-cols-2 gap-6">
-          <a href="#" class="mb-6" @click.prevent="openLatestEventsModal(0)">
+        <div class="grid lg:grid-cols-2 gap-6" data-aos="fade-up">
+          <a href="#" class="mb-6 group" @click.prevent="openLatestEventsModal(0)">
             <div
-              class="h-[240px] bg-cover bg-center mb-4" :style="{ backgroundImage: `url('${data.latestEvents[0].image}')`}"></div>
-            <div class="text-sm text-secondary">{{data.latestEvents[0].date}}</div>
-            <h4 class="text-xl font-bold my-2">
+              class="h-[240px] bg-cover bg-center mb-4 group-hover:bg-[120%]" :style="{ backgroundImage: `url('${data.latestEvents[0].image}')`}"></div>
+            <div class="text-sm text-secondary">
+              <span v-timeformat="data.latestEvents[0].date*1000"></span>
+            </div>
+            <h4 class="text-xl font-bold my-2 group-hover:text-primaryTheme">
               {{ data.latestEvents[0].title }}
             </h4>
             <p v-html="data.latestEvents[0].content" class="ellipsis-4"></p>
@@ -189,11 +184,13 @@ if(process.client){
           <div>
             <ul>
               <li class="mb-6">
-                <a href="#" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(1)">
+                <a href="#" class="flex flex-row gap-4 xl:h-[134px] items-stretch group" @click.prevent="openLatestEventsModal(1)">
                   <div class="basis-1/4 rounded-lg bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[1].image}')`}"></div>
                   <div class="basis-3/4">
-                    <div class="text-sm text-secondary">{{data.latestEvents[1].date}}</div>
-                    <h4 class="font-bold my-2">
+                    <div class="text-sm text-secondary">
+                      <span v-timeformat="data.latestEvents[1].date*1000"></span>
+                    </div>
+                    <h4 class="font-bold my-2 group-hover:text-primaryTheme">
                       {{ data.latestEvents[1].title }}
                     </h4>
                     <p class="ellipsis-2">{{data.latestEvents[1].content}}</p>
@@ -201,11 +198,13 @@ if(process.client){
                 </a>
               </li>
               <li class="mb-6">
-                <a href="" class="flex flex-row gap-4 xl:h-[134px] items-stretch" @click.prevent="openLatestEventsModal(2)">
+                <a href="" class="flex flex-row gap-4 xl:h-[134px] items-stretch group" @click.prevent="openLatestEventsModal(2)">
                   <div class="basis-1/4 rounded-lg bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[2].image}')`}"></div>
                   <div class="basis-3/4">
-                    <div class="text-sm text-secondary">{{data.latestEvents[2].date}}</div>
-                    <h4 class="font-bold my-2">
+                    <div class="text-sm text-secondary">
+                      <span v-timeformat="data.latestEvents[2].date*1000"></span>
+                    </div>
+                    <h4 class="font-bold my-2 group-hover:text-primaryTheme">
                       {{ data.latestEvents[2].title }}
                       
                     </h4>
@@ -214,21 +213,22 @@ if(process.client){
                 </a>
               </li>
               <li class="mb-6">
-                <a href="#" class="flex flex-row gap-4 xl:h-[134px]" @click.prevent="openLatestEventsModal(3)">
+                <a href="#" class="flex flex-row gap-4 xl:h-[134px] group" @click.prevent="openLatestEventsModal(3)">
                   <div
                     class="basis-1/4 rounded-lg bg-cover bg-center" :style="{ backgroundImage: `url('${data.latestEvents[3].image}')`}"></div>
                   <div class="basis-3/4">
-                    <div class="text-sm text-secondary">{{data.latestEvents[3].date}}</div>
-                    <h4 class="font-bold my-2">
+                    <div class="text-sm text-secondary">
+                      <span v-timeformat="data.latestEvents[3].date*1000"></span>
+                    </div>
+                    <h4 class="font-bold my-2 group-hover:text-primaryTheme">
                       {{ data.latestEvents[3].title }}
-
                     </h4>
                     <p class="ellipsis-2">{{data.latestEvents[3].content}}</p>
                   </div>
                 </a>
               </li>
             </ul>
-            <button class="flex items-center px-6 py-4 rounded-full bg-slate-100 text-primary font-semibold">
+            <button class="flex items-center px-6 py-4 rounded-full bg-slate-100 text-primary font-semibold hover:bg-primary hover:text-white duration-300">
               <span>查看更多</span>
               <Icon name="material-symbols:arrow-forward" class="w-8 h-8" />
             </button>
@@ -240,37 +240,37 @@ if(process.client){
     <!-- Policy Issues -->
     <section id="section-PolicyIssues" class="px-4 py-16 bg-colorTheme1">
       <div class="container mx-auto">
-        <h3 class="text-center">
+        <h3 class="text-center" data-aos="fade-up">
           <span
             class="px-3 py-2 rounded-lg font-bold text-white bg-primary inline-block">POLICY ISSUES</span>
         </h3>
-        <h2 class="text-center mb-10">
+        <h2 class="text-center mb-10" data-aos="fade-up">
           <span
             class="text-gradientTheme text-[52px] xl:text-[64px] inline-block Mantou">政策議題</span>
         </h2>
 
         <ul class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-y-16 xl:gap-16 items-stretch text-primary text-2xl font-bold">
-          <li>
-            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(0)">
-              <h4 class="p-4 pt-0">
+          <li data-aos="fade-up">
+            <a href="#" class="flex flex-col justify-between h-full group"  @click.prevent="openPolicyIssuesModal(0)">
+              <h4 class="p-4 pt-0 group-hover:text-primaryTheme">
                 為毛孩子謀福利！<br />
                 推動寵物醫療保障方案
               </h4>
               <img src="~/assets/images/issues_0.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
           </li>
-          <li>
-            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(1)">
-              <h4 class="p-4 pt-0">
+          <li data-aos="fade-up" data-aos-delay="100">
+            <a href="#" class="flex flex-col justify-between h-full group"  @click.prevent="openPolicyIssuesModal(1)">
+              <h4 class="p-4 pt-0 group-hover:text-primaryTheme">
                 打造休閒天堂！<br />
                 推廣寵物休閒與娛樂場所
               </h4>
               <img src="~/assets/images/issues_1.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
           </li>
-          <li class="">
-            <a href="#" class="flex flex-col justify-between h-full"  @click.prevent="openPolicyIssuesModal(2)">
-              <h4 class="p-4 pt-0">推廣寵物飼養教育，讓愛更加專業</h4>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <a href="#" class="flex flex-col justify-between h-full group"  @click.prevent="openPolicyIssuesModal(2)">
+              <h4 class="p-4 pt-0 group-hover:text-primaryTheme">推廣寵物飼養教育，讓愛更加專業</h4>
               <img src="~/assets/images/issues_2.png" alt="" class="rounded-2xl sm:rounded-3xl w-full" />
             </a>
           </li>
@@ -313,12 +313,12 @@ if(process.client){
     </section>
 
     <!-- end banner -->
-    <section class="pb-16 text-center" data-aos="zoom-out-up">
-      <h2 class="sm:flex  mb-4">
+    <section class="pb-16 text-center">
+      <h2 class="sm:flex  mb-4" data-aos="zoom-out-up">
         <span class="text-gradientTheme text-[52px] xl:text-[64px] inline-block mx-auto Mantou leading-[105%] xl:leading-normal">
           台灣的明天 <br class="block sm:hidden" />喵先鋪路</span>
       </h2>
-      <h3 class="inline-block">
+      <h3 class="inline-block" data-aos="zoom-out-up">
         <div class="flex items-center justify-center py-3 px-4 rounded-2xl shadow-lg mb-10">
           <span class="w-12 h-12 rounded-full bg-gradientTheme flex items-center justify-center text-white text-3xl font-bold mr-4">3</span>
           <span class="text-4xl font-bold text-primaryTheme">喵立翰 Miao Li-Han</span>
@@ -397,15 +397,10 @@ if(process.client){
 
     <!-- modal -->
     <Modal  />
-    <!-- <Modal v-show="modalStore.modalOpen"/> -->
     
     <!-- loading -->
     <ClientOnly>
-      <div class="fixed inset-0 bg-white flex justify-center items-center" :class="{'hidden':!loading}" style="z-index:2000" 
-   
-      >
-        <img src="~/assets/images/loading.gif" alt="">
-      </div>
+      <loading />
     </ClientOnly>
 
   </div>
