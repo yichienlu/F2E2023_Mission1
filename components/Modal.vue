@@ -41,9 +41,6 @@
 
 <style lang="scss" scoped>
 
-*{
-  outline: 1px solid #A008;
-}
 
 .modal-animation {
 

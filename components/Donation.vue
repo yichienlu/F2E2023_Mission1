@@ -98,10 +98,6 @@ console.log(donation)
 
 <style lang="scss" scoped>
 
-*{
-  outline: 1px solid #A008;
-}
-
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
