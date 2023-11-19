@@ -37,7 +37,7 @@ if(process.client){
 
 </script>
 <template>
-  <div class="bg-colorTheme1 overflow-hidden">
+  <div class="bg-colorTheme1 ">
     <header class="sticky top-0 sm:px-6 sm:py-3" style="z-index: 1000">
       <div  class="px-6 py-3 bg-[#FFFD] sm:rounded-2xl backdrop-blur-md">
         <div class="flex justify-between items-center">
@@ -279,7 +279,7 @@ if(process.client){
     </section>
 
     <!-- donation & mail -->
-    <section class="px-4 py-16">
+    <section class="px-4 py-16 overflow-hidden">
       <div class="grid md:grid-cols-2 gap-6 container mx-auto text-white">
         <div id="section-donation" class="bg-primaryTheme rounded-3xl px-6 py-10 xl:p-24 flex flex-col justify-between" data-aos="fade-right">
           <h3 class="text-4xl mb-4 Mantou">小額支持喵喵</h3>
@@ -313,7 +313,7 @@ if(process.client){
     </section>
 
     <!-- end banner -->
-    <section class="pb-16 text-center">
+    <section class="pb-16 text-center overflow-hidden">
       <h2 class="sm:flex  mb-4" data-aos="zoom-out-up">
         <span class="text-gradientTheme text-[52px] xl:text-[64px] inline-block mx-auto Mantou leading-[105%] xl:leading-normal">
           台灣的明天 <br class="block sm:hidden" />喵先鋪路</span>
@@ -409,10 +409,9 @@ if(process.client){
 
 <style lang="scss" scoped>
 
-*{
-  outline: 1px solid #A008;
+body {
+  font-family: 'Inter';
 }
-
 
 .text-gradientTheme {
   background: linear-gradient(90deg, #E5793B 1.54%, #FF4185 97.86%);

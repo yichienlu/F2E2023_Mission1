@@ -5,7 +5,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     'nuxt-icon',
-    '@nuxtjs/google-fonts'
+    ['@nuxtjs/google-fonts',{
+      families:{
+        'Inter':true
+      }
+    }]
+    
   ],
   css: [
     "~/assets/global.css",
